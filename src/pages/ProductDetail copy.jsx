@@ -11,25 +11,25 @@ export default function ProductDetail() {
   const [selected, setSelected] = useState(options && options[0]);
   const handleSelect = (e) => setSelected(e.target.value);
   const handleClick = (e) => {};
-
   return (
     <>
-      <p className="mx-12 mt-4 text-gray-700">{category}</p>
+      <p className="mx-12 mt-4 text-grey-700">{category}</p>
       <section className="flex flex-col md:flex-row p-4">
-        <img className="max-w-3xl px-4 basis-7/12" src={image} alt={title} />
-        <div className=" basis-5/12 flex flex-col p-4">
-          <h2 className="text-3xl font-bold py-2">{title}</h2>
-          <p className="text-2xl font-bold py-2  border-b border-gray-400">
+        <img src={image} alt={title} className="w-full px-4 basis-1/12" />
+        <div className="w-full flex-col p-4 basis-5/12">
+          <h2 className="text-3xl font-bold py-2 ">{title}</h2>
+          <p className="text-xl font-bold py-2 border-b border-gray-400">
             $ {price}
           </p>
-          <p className="py-4 text-lg">{description}</p>
+          <p> {description}</p>
           <div className="flex items-center">
             <label className="text-brand font-bold" htmlFor="select">
-              Option :
+              Option :{" "}
             </label>
             <select
+              className=" p-1 m-4 border-2 border-dashed border-brand outline-none
+              "
               id="select"
-              className="p-2 m-4 flex-1 border-2 border-dashed border-brand outline-none"
               onChange={handleSelect}
               value={selected}
             >
